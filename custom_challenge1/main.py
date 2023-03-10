@@ -21,6 +21,7 @@ from base64 import urlsafe_b64encode as b64e, urlsafe_b64decode as b64d
 def obscure(data: bytes) -> bytes:
     return b64e(zlib.compress(data, 9))
 
+
 def unobscure(obscured: bytes) -> bytes:
     return zlib.decompress(b64d(obscured))
 
@@ -75,4 +76,4 @@ def message_coder_menu():
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     message_coder_menu()
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
